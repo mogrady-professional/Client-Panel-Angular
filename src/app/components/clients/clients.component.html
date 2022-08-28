@@ -21,7 +21,7 @@
             <td>{{ client.firstName }}</td>
             <td>{{ client.lastName }}</td>
             <td>{{ client.email }}</td>
-            <td>{{ client.balance | currency: "EUR":true }}</td>
+            <td>{{ client.balance | currency: "EUR" }}</td>
             <td>
                 <a [routerLink]="['client/', client.id]" class="btn btn-secondary btn-sm">
                     <i class="fa fa-arrow-circle-o-right"></i> Details</a>

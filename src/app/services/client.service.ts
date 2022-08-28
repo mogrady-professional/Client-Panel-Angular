@@ -61,4 +61,9 @@ export class ClientService {
     );
     return this.client as Observable<Client>;
   }
+
+  updateClient(client: Client) {
+    this.clientDoc = this.afs.doc(`clients/${client.id}`);
+    this.clientDoc.update(client);
+  }
 }
