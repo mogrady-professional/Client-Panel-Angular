@@ -1,8 +1,8 @@
-# Client Panel Angular
+# Client Panel Angular 13
 
 # Table of Contents
 
-- [Client Panel Angular](#client-panel-angular)
+- [Client Panel Angular 13](#client-panel-angular-13)
 - [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
 - [Functionality](#functionality)
