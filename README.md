@@ -6,7 +6,7 @@
 - [Table of Contents](#table-of-contents)
 - [Project Images](#project-images)
 - [Tech](#tech)
-  - [Firebase](#firebase)
+  - [Firebase Firestore](#firebase-firestore)
 - [Project Setup](#project-setup)
   - [Google Firebase](#google-firebase)
 - [Setting up the Angular Application](#setting-up-the-angular-application)
@@ -23,7 +23,7 @@
 
 - [Angular 2 flash messages module](https://github.com/mythlabsuy/angular2-flash-messages)
 
-## Firebase
+## Firebase Firestore
 
 - [x] snapshotChanges()
 

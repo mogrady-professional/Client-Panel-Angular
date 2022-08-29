@@ -27,7 +27,7 @@ export class ClientsComponent implements OnInit {
     // higher order array method :; reduce works similar to foreach
 
     this.totalOwed = this.clients.reduce((total, client) => {
-      return total + client.balance!;
+      return total + parseFloat(client.balance!.toString());
     }, 0);
   }
 }

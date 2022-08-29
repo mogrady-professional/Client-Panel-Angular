@@ -24,6 +24,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormsModule } from '@angular/forms';
 import { FlashMessagesModule } from 'flash-messages-angular';
+import { AuthService } from './services/auth.service';
 // import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 // import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
@@ -50,7 +51,7 @@ import { FlashMessagesModule } from 'flash-messages-angular';
     AngularFireModule.initializeApp(environment),
     FlashMessagesModule.forRoot(),
   ],
-  providers: [AngularFireAuth],
+  providers: [AngularFireAuth, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
