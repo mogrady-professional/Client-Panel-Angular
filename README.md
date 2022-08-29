@@ -5,28 +5,83 @@
 - [Client Panel Angular](#client-panel-angular)
 - [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
+- [Functionality](#functionality)
+- [Features](#features)
 - [Project Images](#project-images)
+  - [Dashboard](#dashboard)
+  - [Details](#details)
+  - [Edit Details](#edit-details)
+  - [Login](#login)
+  - [New](#new)
+  - [Register](#register)
+  - [Settings](#settings)
 - [Tech](#tech)
   - [Firebase Firestore](#firebase-firestore)
 - [Project Setup](#project-setup)
   - [Google Firebase](#google-firebase)
-- [Setting up the Angular Application](#setting-up-the-angular-application)
+- [Getting Started - Setting up the Angular Application](#getting-started---setting-up-the-angular-application)
   - [Building the Components](#building-the-components)
   - [Include the Components in the App](#include-the-components-in-the-app)
   - [Create a new Module of Router](#create-a-new-module-of-router)
 - [Installing Firebase](#installing-firebase)
   - [Create model](#create-model)
-  - [Create Service](#create-service)
 
 # Introduction
+
+Client Panel application is a built on Boostrap 4 using Angular 13 with a firebase backend. It is used as a client management application and allows users to register, login and log client details and project information to help keep track of project billing.
+
+Once logged in, a registered user can add, edit, and delete clients. The application also allows a to update client profile information and balance owed.
+
+# Functionality
+
+- Enable/Disable Register functionality
+- Log Client and Project Details
+- Register and Login
+- Edit Client Details and Balance
+- Firebase storage
+- Firebase authentication with username & password
+
+# Features
 
 - Custom Auth Guard used
 - Services
   - Settings Service
   - Auth Service
   - Client Service
+- Models
+  - Clients
+  - Settings
+- Firebase Deployment
 
 # Project Images
+
+## Dashboard
+
+<p align="center"><img src="images/dashboard.png"  height="auto" width="100%"></p>
+
+## Details
+
+<p align="center"><img src="images/details.png"  height="auto" width="100%"></p>
+
+## Edit Details
+
+<p align="center"><img src="images/details-edit.png"  height="auto" width="100%"></p>
+
+## Login
+
+<p align="center"><img src="images/login.png"  height="auto" width="100%"></p>
+
+## New
+
+<p align="center"><img src="images/new.png"  height="auto" width="100%"></p>
+
+## Register
+
+<p align="center"><img src="images/register.png"  height="auto" width="100%"></p>
+
+## Settings
+
+<p align="center"><img src="images/settings.png"  height="auto" width="100%"></p>
 
 # Tech
 
@@ -44,6 +99,7 @@
 
 - Created Firestore Database
 - Created collection with two entries. Collection `clients`
+- Firebase credentials are stored in `environment.ts` file (not included in repo)
 
 ```json
 {
@@ -68,14 +124,14 @@
 
 ```json
 {
-  "email": "michael@gmail.com",
-  "password": "123456"
+  "email": "email_goes_here@gmail.com",
+  "password": "password_goes_here"
 }
 ```
 
 > Fireebase/firestore now set up
 
-# Setting up the Angular Application
+# Getting Started - Setting up the Angular Application
 
 - Generate new project `ng new clientpanel`
 - Install Dependencies
@@ -227,16 +283,11 @@ export const environment = {
 };
 ```
 
-- Import the `environment ` object in the `app.module.ts` file
-- Import the `AngularFireModule` and `AngularFirestoreModule` from `angularfire2`
-- Import the `AngularFireAuthModule` from `angularfire2/auth`
+- Import the `environment ` object from `src/environments/environment` into the `app.module.ts` file and the following below to get started
 
 ```typescript
 import { AngularFireModule } from "@angular/fire/compat";
-import { AngularFireAuthModule } from "@angular/fire/compat/auth";
-import { AngularFireStorageModule } from "@angular/fire/compat/storage";
-import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
-import { AngularFireDatabaseModule } from "@angular/fire/compat/database";
+import { AngularFireAuth } from "@angular/fire/compat/auth";
 ```
 
 - Running into issues with packages for firebase
@@ -254,12 +305,4 @@ export interface Client {
   phone?: string;
   balance?: number;
 }
-```
-
-## Create Service
-
-- `ng g s services/client --skipTests=true`
-
-```ts
-
 ```

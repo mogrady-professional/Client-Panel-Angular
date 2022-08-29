@@ -19,13 +19,12 @@ export class ClientsComponent implements OnInit {
     this.clientService.getClients().subscribe((clients) => {
       this.clients = clients;
       this.getTotalOwed();
-      console.log(clients);
+      // console.log(clients);
     });
   }
 
   getTotalOwed() {
     // higher order array method :; reduce works similar to foreach
-
     this.totalOwed = this.clients.reduce((total, client) => {
       return total + parseFloat(client.balance!.toString());
     }, 0);

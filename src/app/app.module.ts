@@ -19,15 +19,11 @@ import { environment } from 'src/environments/environment';
 import { RouterModule } from '@angular/router';
 
 import { AngularFireModule } from '@angular/fire/compat';
-// import { Firestore } from '@angular/fire/firestore';
 
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormsModule } from '@angular/forms';
 import { FlashMessagesModule } from 'flash-messages-angular';
 import { AuthService } from './services/auth.service';
-// import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-// import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-// import { AuthGuard } from './guard/auth.guard';
 import { SettingsService } from './services/settings.service';
 
 @NgModule({
