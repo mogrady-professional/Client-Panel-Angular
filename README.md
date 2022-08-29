@@ -21,6 +21,10 @@
 # Introduction
 
 - Custom Auth Guard used
+- Services
+  - Settings Service
+  - Auth Service
+  - Client Service
 
 # Project Images
 

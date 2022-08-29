@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-// import { SettingsService } from '../../services/settings.service';
+import { SettingsService } from '../../services/settings.service';
 import { ClientService } from 'src/app/services/client.service';
 import { FlashMessagesService } from 'flash-messages-angular';
 import { Client } from '../../models/Clients';
@@ -17,12 +17,13 @@ export class NavbarComponent implements OnInit {
   // showRegister: boolean;
   isLoggedIn: boolean;
   loggedInUser: string | undefined | null;
-  showRegister: boolean;
+  showRegister?: boolean;
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    private flashMessage: FlashMessagesService
+    private flashMessage: FlashMessagesService,
+    private settingsService: SettingsService
   ) {
     this.isLoggedIn = false;
     this.loggedInUser = '';
@@ -38,7 +39,7 @@ export class NavbarComponent implements OnInit {
         this.isLoggedIn = false;
       }
     });
-    // this.showRegister = this.settingsService.getSettings().allowRegistration;
+    this.showRegister = this.settingsService.getSettings().allowRegistration;
   }
 
   onLogoutClick() {

@@ -22,17 +22,4 @@ export class AuthGuard implements CanActivate {
       })
     );
   }
-
-  //   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
-  //     return new Promise((resolve, rejected) => {
-  //       this.afAuth.onAuthStateChanged((user) => {
-  //         if (user) {
-  //           resolve(true);
-  //         } else {
-  //           this.router.navigate(['/login']);
-  //           resolve(false);
-  //         }
-  //       });
-  //     });
-  //   }
 }

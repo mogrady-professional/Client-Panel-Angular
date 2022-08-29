@@ -10,8 +10,8 @@ import { ClientDetailsComponent } from './components/client-details/client-detai
 import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
-import { AuthGuard } from './guard/auth.guard';
-// import { RegisterGuard } from './guards/register.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { RegisterGuard } from './guards/register.guard';
 
 const routes: Routes = [
   {
@@ -23,7 +23,7 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
-    // canActivate: [RegisterGuard],
+    canActivate: [RegisterGuard],
   },
   {
     path: 'client/add',
@@ -51,9 +51,6 @@ const routes: Routes = [
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forRoot(routes)],
-  providers: [
-    AuthGuard,
-    //  RegisterGuard
-  ],
+  providers: [AuthGuard, RegisterGuard],
 })
 export class AppRoutingModule {}

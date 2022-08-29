@@ -27,6 +27,8 @@ import { FlashMessagesModule } from 'flash-messages-angular';
 import { AuthService } from './services/auth.service';
 // import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 // import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+// import { AuthGuard } from './guard/auth.guard';
+import { SettingsService } from './services/settings.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,7 @@ import { AuthService } from './services/auth.service';
     AngularFireModule.initializeApp(environment),
     FlashMessagesModule.forRoot(),
   ],
-  providers: [AngularFireAuth, AuthService],
+  providers: [AngularFireAuth, AuthService, SettingsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
