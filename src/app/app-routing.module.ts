@@ -10,14 +10,14 @@ import { ClientDetailsComponent } from './components/client-details/client-detai
 import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
-// import { AuthGuard } from './guards/auth.guard';
+import { AuthGuard } from './guard/auth.guard';
 // import { RegisterGuard } from './guards/register.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   { path: 'login', component: LoginComponent },
   {
@@ -28,22 +28,22 @@ const routes: Routes = [
   {
     path: 'client/add',
     component: AddClientComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'client/edit/:id',
     component: EditClientComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'client/:id',
     component: ClientDetailsComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'settings',
     component: SettingsComponent,
-    //  canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   { path: '**', component: NotFoundComponent },
 ];
@@ -51,6 +51,9 @@ const routes: Routes = [
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forRoot(routes)],
-  // providers: [AuthGuard, RegisterGuard],
+  providers: [
+    AuthGuard,
+    //  RegisterGuard
+  ],
 })
 export class AppRoutingModule {}
